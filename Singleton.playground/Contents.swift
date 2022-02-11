@@ -33,6 +33,7 @@ class LoginService {
 }
 
 // Feed Module
+struct Feed {}
 protocol FeedClient {
     func loadFeedItem(completion: ([Feed]) -> Void)
 }
