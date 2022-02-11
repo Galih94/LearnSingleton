@@ -53,3 +53,25 @@ class FeedService {
         }
     }
 }
+
+// Follower Module
+struct Follower {}
+protocol FollowerClient {
+    func loadFollower(completion: ([Follower]) -> Void)
+}
+
+extension ApiClient: FollowerClient {
+    func loadFollower(completion: ([Follower]) -> Void) {}
+}
+
+class FollowerService {
+    
+    var loadFollower: (((Follower) -> Void) -> Void)?
+    
+    func load() {
+        loadFollower? { followers in
+            
+        }
+    }
+}
+
