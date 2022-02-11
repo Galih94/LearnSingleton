@@ -31,3 +31,24 @@ class LoginService {
         }
     }
 }
+
+// Feed Module
+protocol FeedClient {
+    func loadFeedItem(completion: ([Feed]) -> Void)
+}
+
+extension ApiClient: FeedClient {
+    func loadFeedItem(completion: ([Feed]) -> Void) {}
+}
+
+
+class FeedService {
+    
+    var loadFeed: ((([Feed]) -> Void) -> Void)?
+    
+    func load() {
+        loadFeed? { feeds in
+            
+        }
+    }
+}
